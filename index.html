@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1b36">
+  <meta name="description" content="My Help — A tua ajuda, a qualquer momento.">
+  <title>My Help — A tua ajuda, a qualquer momento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="My Help início">
+        <span class="brand-mark">M</span>
+        <span>My Help<small>A tua ajuda, a qualquer momento</small></span>
+      </a>
+      <nav>
+        <button class="nav-link active" data-view="assistant">✦ <span>Assistente IA</span></button>
+        <button class="nav-link" data-view="support">▣ <span>Suporte humano</span></button>
+        <button class="nav-link" data-view="history">◷ <span>Histórico</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Plataforma em fase inicial</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
+        <div><strong id="pageTitle">Assistente IA</strong><small>Estamos aqui para ajudar.</small></div>
+        <span class="avatar">MH</span>
+      </header>
+
+      <section class="view active" id="assistantView">
+        <div class="welcome">
+          <span class="eyebrow">MY HELP · ASSISTENTE</span>
+          <h1>Como posso <em>ajudar</em> hoje?</h1>
+          <p>Escreve a tua dúvida ou escolhe uma sugestão para começar.</p>
+        </div>
+        <div class="suggestions">
+          <button data-prompt="Ajuda-me a resolver um problema com o meu telemóvel.">📱 Problema com telemóvel</button>
+          <button data-prompt="Ajuda-me a escrever uma mensagem profissional.">✍️ Escrever uma mensagem</button>
+          <button data-prompt="Explica-me um assunto de forma simples.">💡 Explicar um assunto</button>
+        </div>
+        <div class="chat-panel">
+          <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+              <span class="message-icon">M</span>
+              <div><strong>My Help</strong><p>Olá! Sou o assistente do My Help. Conta-me o que precisas e vou orientar-te.</p></div>
+            </div>
+          </div>
+          <form id="chatForm" class="composer">
+            <textarea id="chatInput" rows="1" placeholder="Escreve a tua mensagem..." required></textarea>
+            <button type="submit" aria-label="Enviar mensagem">➤</button>
+          </form>
+          <small class="local-note">Versão inicial: o histórico fica guardado neste dispositivo. A ligação à IA será configurada no servidor.</small>
+        </div>
+      </section>
+
+      <section class="view" id="supportView">
+        <div class="section-heading">
+          <span class="eyebrow">APOIO AO CLIENTE</span>
+          <h1>Suporte <em>humano</em></h1>
+          <p>Cria um pedido e acompanha o estado do teu atendimento.</p>
+        </div>
+        <form id="ticketForm" class="form-card">
+          <label for="ticketSubject">Assunto</label>
+          <input id="ticketSubject" maxlength="100" placeholder="Ex.: Preciso de ajuda com a minha conta" required>
+          <label for="ticketDetails">Como podemos ajudar?</label>
+          <textarea id="ticketDetails" rows="5" maxlength="2000" placeholder="Descreve o problema com o máximo de detalhe possível..." required></textarea>
+          <button class="primary-button" type="submit">Enviar pedido</button>
+        </form>
+        <div class="ticket-list" id="ticketList"></div>
+      </section>
+
+      <section class="view" id="historyView">
+        <div class="section-heading">
+          <span class="eyebrow">AS TUAS ATIVIDADES</span>
+          <h1>O teu <em>histórico</em></h1>
+          <p>Mensagens e pedidos guardados neste dispositivo.</p>
+        </div>
+        <div id="historyList" class="history-list"></div>
+        <button id="clearHistory" class="text-button">Limpar histórico deste dispositivo</button>
+      </section>
+
+      <footer>© <span id="year"></span> My Help. Feito para tornar a ajuda mais simples.</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
